@@ -13,7 +13,7 @@ const home = ({ providers }) => {
     <div className="space-y-10 relative">
       <Head>
         <title>LinkedIn Clone</title>
-        <link rel="icon" href="/assets/LinkedIn_logo.png" />
+        <link rel="icon" href="/assets/linkedin.png" />
       </Head>
       <header className="flex justify-around items-center py-4">
         <div className="relative w-36 h-10">

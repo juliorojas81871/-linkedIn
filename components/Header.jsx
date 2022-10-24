@@ -40,7 +40,7 @@ const Header = () => {
               />
             ) : (
               <Image
-                src="/assets/LinkedIn_logo.png"
+                src="/assets/linkedin.png"
                 alt=""
                 width={45}
                 height={45}

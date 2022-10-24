@@ -18,7 +18,7 @@ const home = ({ providers }) => {
       <header className="flex justify-around items-center py-4">
         <div className="relative w-36 h-10">
           <Image
-            src="/assets/li.svg"
+            src="/assets/li.jpg"
             alt=""
             layout="fill"
             objectFit="contain"
@@ -68,7 +68,7 @@ const home = ({ providers }) => {
         </div>
         {/* right */}
         <div className="relative xl:absolute w-80 h-80 xl:w-[650px] xl:h-[650px] top-14 right-5">
-          <Image src="/assets/home.svg" alt="" layout="fill" priority />
+          <Image src="/assets/home.jpg" alt="" layout="fill" priority />
         </div>
       </main>
     </div>

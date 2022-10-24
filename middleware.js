@@ -2,16 +2,25 @@ import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 
 export async function middleware(req) {
-  // check if the user is at the home route
-  if (req.nextUrl.pathname === "/") {
-    const session = await getToken({
-      req,
-      secret: process.env.JWT_SECRET,
-      secureCookie: process.env.NODE_ENV === "production",
-    });
-    // You could also check for any property on the session object,
-    // like role === "admin" or name === "John Doe", etc.
-    if (!session) return NextResponse.redirect(new URL("/home", req.url));
-    // If user is authenticated, continue.
+  // Token will exist if user is logged in
+  const token = await getToken({ req, secret: process.env.JWT_SECRET });
+
+  const { pathname } = req.nextUrl;
+  // Allow the request if the following is true...
+  // 1. Its a request for next-auth session & provider fetching
+  // 2. the token exists
+  // _next will check the path is good because middleware check every single request the server does
+  if (
+    pathname.includes("/api/") ||
+    pathname.includes("_next") ||
+    pathname === "favicon.ico" ||
+    token
+  ) {
+    return NextResponse.next();
+  }
+
+  // Redirect them to home if they don't have a token AND are requesting a protected route
+  if (!token && pathname !== "/home") {
+    return NextResponse.redirect(new URL("/home", req.url));
   }
 }

@@ -77,13 +77,13 @@ const Header = () => {
               setTheme(resolvedTheme === "dark" ? "light" : "dark")
             }
           >
-            <span className="absolute left-0">🌜</span>
+            <span className="absolute left-0 text-sm">🌜</span>
             <motion.div
               className="w-5 h-5 bg-white rounded-full z-40"
               layout
               transition={spring}
             />
-            <span className="absolute right-0.5">🌞</span>
+            <span className="absolute right-0.5 text-sm">🌞</span>
           </div>
         )}
       </div>

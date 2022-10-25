@@ -7,7 +7,6 @@ const Feed = ({ posts }) => {
   const [realtimePosts, setRealtimePosts] = useState([]);
   const [handlePost, setHandlePost] = useRecoilState(handlePostState);
   const [useSSRPosts, setUseSSRPosts] = useRecoilState(useSSRPostsState);
-  console.log(posts)
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch("/api/posts", {

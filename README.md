@@ -33,4 +33,4 @@ http://localhost:3000/
 ```
 
 ## Example Pic:
-![Reddit Clone Example Pic](https://github.com/juliorojas81871/-linkedIn /blob/main/pics/main.jpg)
+![LinkedIn Clone Example Pic](https://github.com/juliorojas81871/-linkedIn/blob/main/pics/main.jpg)

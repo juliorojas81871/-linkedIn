@@ -8,7 +8,8 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
     <SessionProvider session={session}>
       <RecoilRoot>
         <ThemeProvider attribute="class">
-          <Component {...pageProps} />
+          
+            <Component {...pageProps} />
         </ThemeProvider>
       </RecoilRoot>
     </SessionProvider>
